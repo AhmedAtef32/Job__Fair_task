@@ -1,0 +1,45 @@
+<!--  nav bar  -->
+<nav class="bg-white shadow dark:bg-gray-800 py-2">
+  <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+    <div class="text-lg font-bold">
+      <a routerLink="/" class="text-gray-800 ">Shop All</a>
+    </div>
+    <div class=" hidden space-x-4  md:flex">
+      <a routerLink="/home" routerLinkActive="font-bold" class="text-black ">Home</a>
+    </div>
+
+    <div>
+
+      <ul class="flex items-center space-x-4">
+
+        <li class="dark-mode bg-[#E7EDF4] size-8 rounded-md flex items-center justify-center">
+          <!-- <i class="pi pi-moon" style="font-size: 20px;"></i> -->
+          <i class="pi pi-sun" style="font-size: 20px;"></i>
+        </li>
+
+        <li class="cart__icon bg-[#E7EDF4] size-8 rounded-md flex items-center justify-center">
+          <i class="pi pi-shopping-cart" style="font-size: 20px;"></i>
+        </li>
+
+        <li  class="show__side__bar bg-[#E7EDF4] size-8 rounded-md flex items-center justify-center  md:hidden">
+          <button class="cursor-pointer" (click)="visible2 = true">
+            
+            <i class="pi pi-bars" style="font-size: 20px;"></i>
+          </button>
+        </li>
+      </ul>
+
+
+    </div>
+
+  </div>
+</nav>
+
+<!-- side bar -->
+<p-drawer header="Shop All" [(visible)]="visible2" position="right">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat.
+  </p>
+</p-drawer>

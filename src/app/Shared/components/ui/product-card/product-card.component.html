@@ -1,0 +1,11 @@
+<div class="card p-2">
+
+  <div class="card__image">
+    <img class="w-full h-[300px]" [src]="product().image" [alt]="product().title" />
+  </div>
+
+  <div class="card__content p-2 text-center">
+      <h3> {{product().title | term : 4}} ..</h3>
+  </div>
+
+</div>
