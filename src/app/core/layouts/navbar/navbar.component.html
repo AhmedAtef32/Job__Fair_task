@@ -7,7 +7,7 @@
 
     <div class="hidden space-x-4 md:flex">
       <a routerLink="/home" routerLinkActive="font-bold bg-black text-white"
-         class="text-black dark:text-white transition-all duration-300 px-2 py-1 rounded">
+        class="text-black dark:text-white transition-all duration-300 px-2 py-1 rounded">
         Home
       </a>
     </div>
@@ -16,9 +16,9 @@
       <ul class="flex items-center space-x-4">
         <li class="dark-mode bg-[#E7EDF4] dark:bg-gray-700 size-8 rounded-md flex items-center justify-center">
           @if (isLightMode) {
-            <i (click)="changeMode()" class="pi pi-moon cursor-pointer text-black" style="font-size: 20px;"></i>
+          <i (click)="changeMode()" class="pi pi-moon cursor-pointer text-black" style="font-size: 20px;"></i>
           } @else {
-            <i  (click)="changeMode()" class="pi pi-sun cursor-pointer text-yellow-500" style="font-size: 20px;"></i>
+          <i (click)="changeMode()" class="pi pi-sun cursor-pointer text-yellow-500" style="font-size: 20px;"></i>
           }
         </li>
 
@@ -26,7 +26,8 @@
           <i class="pi pi-shopping-cart dark:text-white" style="font-size: 20px;"></i>
         </li>
 
-        <li class="show__side__bar bg-[#E7EDF4] dark:bg-gray-700 size-8 rounded-md flex items-center justify-center md:hidden">
+        <li
+          class="show__side__bar bg-[#E7EDF4] dark:bg-gray-700 size-8 rounded-md flex items-center justify-center md:hidden">
           <button class="cursor-pointer" (click)="visible2 = true">
             <i class="pi pi-bars dark:text-white" style="font-size: 20px;"></i>
           </button>
@@ -37,11 +38,10 @@
 </nav>
 
 <!-- side bar -->
-<p-drawer header="Shop All" [(visible)]="visible2" position="right"
-          class="dark:bg-gray-900 dark:text-white">
+<p-drawer header="Shop All" [(visible)]="visible2" position="right" [style]="{ width: '250px' , border: 'none' }">
   <ul class="mt-5">
     <li class="text-black dark:text-white p-2 rounded transition-all duration-300"
-        routerLinkActive="font-bold bg-black text-white">
+      routerLinkActive="font-bold bg-black text-white">
       <a routerLink="/home">Home</a>
     </li>
   </ul>
