@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, shareReplay } from 'rxjs';
 import { Iproducts } from '../../interfaces/Iproducts';
+import { Environment } from '../../../core/environment/enviro';
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +22,15 @@ export class ProductsService {
   getProducts():Observable<any> {
 
     if(!this.products$){
-      this.products$ = this._http.get<Iproducts>('https://fakestoreapi.com/products');
+      this.products$ = this._http.get<Iproducts>(`${Environment.baseUrl}/products`);
     }
 
     return this.products$;
+  }
+
+
+  getProductById(id: number): Observable<any> {
+    return this._http.get(`${Environment.baseUrl}/products/${id}`);
   }
 
 }

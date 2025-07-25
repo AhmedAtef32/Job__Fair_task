@@ -1,7 +1,12 @@
-<div class="card p-2">
+<div class="card p-2 bg-[#E7EDF4] rounded-md shadow-md ">
 
-  <div class="card__image">
+  <div class="card__image relative">
     <img class="w-full h-[300px]" [src]="product().image" [alt]="product().title" />
+    <div class="inset-0 absolute bg-[rgba(0,0,0,0.5)] opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+      <i class="pi pi-eye text-white cursor-pointer" style="font-size: 50px;"></i>
+    </div>
+
+
   </div>
 
   <div class="card__content p-2 text-center">

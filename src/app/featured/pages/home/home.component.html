@@ -5,21 +5,36 @@
     <p class="my-2 text-[#49739c]"> Exploer our curated collection of high-quality products . </p>
 
     <div class="search__input my-5 relative">
-      <input [(ngModel)]="searchTerm" name="search" id="search"  type="text" placeholder="Search for products..." class="w-full bg-[#E7EDF4] p-2 border border-gray-300 rounded-md focus:outline-none  " />
+      <input [(ngModel)]="searchTerm" name="search" id="search" type="text" placeholder="Search for products..."
+        class="w-full bg-[#E7EDF4] p-2 border border-gray-300 rounded-md focus:outline-none  " />
       <i class="pi pi-search absolute top-[50%] right-2 transform -translate-y-1/2"></i>
     </div>
 
     <div class="Sorting mt-5 ">
       <label for="sort" class="text-gray-700">Sort by:</label>
-      <select id="sort" class="bg-[#E7EDF4] p-2 border border-gray-300 rounded-md focus:outline-none ml-2">
-        <option value="relevance">Relevance</option>
+      <select (change)="sort($event)" id="sort"
+        class="bg-[#E7EDF4] p-2 border border-gray-300 rounded-md focus:outline-none ml-2">
+        <option value="original">original</option>
         <option value="name-A-to-Z">Name : A-Z</option>
         <option value="price-low-to-high">Price: Low to High</option>
         <option value="price-high-to-low">Price: High to Low</option>
       </select>
     </div>
 
-    <app-all-products [searchTerm]="searchTerm"  [allProducts]="products()"></app-all-products>
+    <div class="mt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-4">
 
+      @if(products().length > 0) {
+      @for (product of products() | search : searchTerm; track product.id) {
+
+      <app-product-card [product]="product"></app-product-card>
+      }
+      }@else {
+        @for (item of [1,2,3,4,5,6,7,8]; track $index) {
+        <app-product-card-skeleton></app-product-card-skeleton>
+        }
+      }
+
+
+    </div>
   </div>
 </section>
