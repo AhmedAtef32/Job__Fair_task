@@ -59,13 +59,6 @@ ng serve
 
 ---
 
-## ✍️ الكاتب
 
-Ahmed Atef  
-[GitHub: AhmedAtef32](https://github.com/AhmedAtef32)
 
----
 
-## 📄 الرخصة
-
-MIT License
