@@ -12,10 +12,10 @@ import { isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ProductCardComponent } from "../../../Shared/components/ui/product-card/product-card.component";
 import { SearchPipe } from '../../../core/pipe/search/search.pipe';
-import { ProductCardSkeletonComponent } from "../../../Shared/components/ui/product-card-skeleton/product-card-skeleton.component";
+import { ProductCardSkeletonComponent } from "../../../Shared/components/ui/product-card/product-card-skeleton/product-card-skeleton.component";
 @Component({
   selector: 'app-home',
-  imports: [ FormsModule, ProductCardComponent, SearchPipe, ProductCardSkeletonComponent],
+  imports: [FormsModule, ProductCardComponent, SearchPipe, ProductCardSkeletonComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   products: WritableSignal<Iproducts[]> = signal([]);
   originalProducts!: Iproducts[] ;
   searchTerm: string = '';
-
+  iscaling: boolean = true;
   ngOnInit(): void {
     if (isPlatformBrowser(this._pLATFORM_ID)) {
       this.getAllProducts();
@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
       next: (res) => {
         this.products.set(res);
         this.originalProducts = res;
+        this.iscaling = false
       },
     });
   }

@@ -5,7 +5,7 @@
       <a routerLink="/" class="text-gray-800 ">Shop All</a>
     </div>
     <div class=" hidden space-x-4  md:flex">
-      <a routerLink="/home" routerLinkActive="font-bold" class="text-black ">Home</a>
+      <a routerLink="/home" routerLinkActive="font-bold bg-black text-white!" class="text-black transition-all duration-300 px-2 py-1 rounded">Home</a>
     </div>
 
     <div>
@@ -38,8 +38,8 @@
 <!-- side bar -->
 <p-drawer header="Shop All" [(visible)]="visible2" position="right">
   <ul class="mt-5">
-    <li>
-      <a routerLink="/home" routerLinkActive="font-bold" class="text-black ">Home</a>
+    <li class="text-black p-2 rounded transition-all duration-300"  routerLinkActive="font-bold bg-black text-white!">
+      <a routerLink="/home"  >Home</a>
     </li>
   </ul>
 </p-drawer>

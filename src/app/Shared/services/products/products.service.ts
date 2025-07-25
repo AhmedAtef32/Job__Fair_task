@@ -29,7 +29,7 @@ export class ProductsService {
   }
 
 
-  getProductById(id: number): Observable<any> {
+  getProductById(id: string): Observable<any> {
     return this._http.get(`${Environment.baseUrl}/products/${id}`);
   }
 
