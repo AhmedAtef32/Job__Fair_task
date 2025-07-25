@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
         this.products.set(res);
         this.originalProducts = res;
         this.iscaling = false
-      },
+      },error: (err) => console.log(err)
     });
   }
 

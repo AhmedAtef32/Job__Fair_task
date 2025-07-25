@@ -2,7 +2,6 @@ import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { DrawerModule } from 'primeng/drawer';
 import { ButtonModule } from 'primeng/button';
-import { CartService } from '../../../featured/services/cart/cart.service';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -14,17 +13,23 @@ import { isPlatformBrowser } from '@angular/common';
 export class NavbarComponent implements OnInit {
   visible2: boolean = false;
 
-  private readonly _cartService = inject(CartService)
   private readonly _pLATFORM_ID = inject(PLATFORM_ID)
   isLightMode: boolean = true
   ngOnInit(): void {
     if(isPlatformBrowser(this._pLATFORM_ID)) {
-      this._cartService.getCartProducts()
       this.checkIfDrak()
-
     }
   }
 
+  /**
+   * Toggle the current theme of the application
+   *
+   * If the current theme is light, this function will add the 'dark' class to the documentElement
+   * and set the theme to 'dark' in localStorage. Otherwise, it will remove the 'dark' class and set
+   * the theme to 'light'.
+   *
+   * @returns {void}
+   */
   changeMode() {
 
     if(this.isLightMode){
@@ -38,6 +43,11 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  /**
+   * Checks if the current theme is dark and sets the class accordingly
+   *
+   * @returns {void}
+   */
   checkIfDrak(){
        if (localStorage.getItem('theme') == 'dark') {
         this.isLightMode = false

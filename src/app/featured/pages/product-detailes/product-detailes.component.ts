@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../../../Shared/services/products/products.service';
 import { Iproducts } from '../../../Shared/interfaces/Iproducts';
 import { CurrencyPipe } from '@angular/common';
-import { CartService } from '../../services/cart/cart.service';
 import { ProductDetailesSkeletonComponent } from "../../../Shared/components/ui/product-detailes-skeleton/product-detailes-skeleton.component";
 
 @Component({
@@ -16,7 +15,6 @@ export class ProductDetailesComponent implements OnInit {
 
   private readonly _activatedRoute = inject(ActivatedRoute);
   private readonly _productsService = inject(ProductsService);
-  private readonly _cartService = inject(CartService);
   product!:Iproducts
   id!:string ;
 
