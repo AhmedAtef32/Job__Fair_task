@@ -1,12 +1,13 @@
-<section class="md:w-[75%] mx-auto py-5">
+<section class="md:w-[75%] mx-auto py-5 overflow-hidden">
   <div class="container mx-auto px-4">
-    <h1 class="text-3xl font-bold mt-5 text-black dark:text-white">All Products</h1>
+    <h1 class="text-3xl font-bold mt-5 text-black dark:text-white animate__animated animate__fadeInRight" d>All Products
+    </h1>
 
-    <p class="my-2 text-[#49739c] dark:text-gray-300">
+    <p class="my-2 text-[#49739c] dark:text-gray-300 animate__animated animate__bounceIn">
       Explore our curated collection of high-quality products.
     </p>
 
-    <div class="search__input my-5 relative">
+    <div class="search__input my-5 relative animate__animated animate__zoomIn">
       <input [(ngModel)]="searchTerm" name="search" id="search" type="text" placeholder="Search for products..."
         class="w-full bg-[#E7EDF4] dark:bg-gray-700 dark:text-white p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none" />
       <i
@@ -37,8 +38,8 @@
         No Product Found !!!
       </h3>
       } @else {
-      @for (product of filteredProducts; track product.id) {
-      <app-product-card [product]="product"></app-product-card>
+      @for (product of filteredProducts; track product.id ; let index = $index) {
+      <app-product-card [product]="product" [index]="index"></app-product-card>
       }
       }
       }

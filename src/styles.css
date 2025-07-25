@@ -3,3 +3,6 @@
 @import "primeicons/primeicons.css";
 @custom-variant dark (&:where(.dark, .dark *));
 
+body{
+  padding-top: 50px;
+}

@@ -1,4 +1,5 @@
-<section class="py-5">
+@if (product) {
+  <section class="py-5">
   <div class="container mx-auto px-4">
     <h1 class="text-4xl font-bold text-center mt-5 text-black dark:text-white">
       Product Details
@@ -48,3 +49,12 @@
     </div>
   </div>
 </section>
+}@else {
+  <app-product-detailes-skeleton></app-product-detailes-skeleton>
+}
+
+
+
+
+
+

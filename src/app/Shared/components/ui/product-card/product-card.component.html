@@ -1,6 +1,7 @@
-<div class="card p-2 bg-[#E7EDF4] dark:bg-gray-800 rounded-md shadow-md h-full">
+<div class="card p-2 bg-[#E7EDF4] dark:bg-gray-800 rounded-md shadow-md h-full" data-aos="fade-up"
+  data-aos-duration="1500" >
 
-  <div class="card__image relative">
+  <div [routerLink]="['/productDetails', product().id]" class="card__image relative">
     <img class="w-full h-[300px] object-contain" [src]="product().image" [alt]="product().title" />
 
     <div
@@ -14,6 +15,8 @@
     <h3 class="text-black dark:text-white">
       {{ product().title | term : 4 }} ..
     </h3>
+
+
   </div>
 
 </div>

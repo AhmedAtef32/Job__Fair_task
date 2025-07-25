@@ -11,4 +11,5 @@ import { RouterLink } from '@angular/router';
 })
 export class ProductCardComponent {
   product: InputSignal<Iproducts> = input.required();
+  index: InputSignal<number> = input.required();
 }

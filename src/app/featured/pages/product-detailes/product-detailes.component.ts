@@ -4,10 +4,11 @@ import { ProductsService } from '../../../Shared/services/products/products.serv
 import { Iproducts } from '../../../Shared/interfaces/Iproducts';
 import { CurrencyPipe } from '@angular/common';
 import { CartService } from '../../services/cart/cart.service';
+import { ProductDetailesSkeletonComponent } from "../../../Shared/components/ui/product-detailes-skeleton/product-detailes-skeleton.component";
 
 @Component({
   selector: 'app-product-detailes',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, ProductDetailesSkeletonComponent],
   templateUrl: './product-detailes.component.html',
   styleUrl: './product-detailes.component.css'
 })
