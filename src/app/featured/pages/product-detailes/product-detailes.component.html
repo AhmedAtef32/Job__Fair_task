@@ -1,28 +1,50 @@
 <section class="py-5">
   <div class="container mx-auto px-4">
-      <h1 class="text-4xl font-bold text-center mt-5">Product Details</h1>
+    <h1 class="text-4xl font-bold text-center mt-5 text-black dark:text-white">
+      Product Details
+    </h1>
 
     <div class="mt-8 grid grid-cols-1 md:grid-cols-2 px-5">
 
       <div class="w-[75%] mx-auto">
         <div class="product__image">
-          <img [src]="product?.image" [alt]="product.title" class=" md:w-[75%] lg:w-[50%] mx-auto">
+          <img [src]="product?.image" [alt]="product.title" class="md:w-[75%] lg:w-[50%] mx-auto" />
         </div>
       </div>
 
-      <div class=" flex flex-col justify-center items-start mt-4 md:mt-0">
-        <div class="product__details">
-          <h2 class="text-2xl font-semibold">Title: <span class="text-lg">{{ product.title }}</span></h2>
-          <p class="text-2xl font-semibold">Description: <span class="text-lg">{{ product.description }} .</span></p>
-          <p class="text-2xl font-semibold">Price: <span class="text-lg">{{ product.price | currency : 'GBP'}}</span></p>
-          <p class="text-2xl font-semibold">Category: <span class="text-lg">{{ product.category }}</span></p>
-          <p class="text-2xl font-semibold">Rating: <span class="text-lg">{{ product.rating.rate }}</span> <i class="ms-2 pi pi-star-fill text-yellow-500"></i></p>
-          <button  class="bg-black cursor-pointer text-white px-4 py-2 rounded mt-4 hover:bg-transparent border border-black hover:text-black transition duration-300 w-full" >Add to Cart</button>
+      <div class="flex flex-col justify-center items-start mt-4 md:mt-0">
+        <div class="product__details space-y-3">
+
+          <h2 class="text-2xl font-semibold text-black dark:text-white">
+            Title: <span class="text-lg dark:text-gray-300">{{ product.title }}</span>
+          </h2>
+
+          <p class="text-2xl font-semibold text-black dark:text-white">
+            Description: <span class="text-lg dark:text-gray-300">{{ product.description }}.</span>
+          </p>
+
+          <p class="text-2xl font-semibold text-black dark:text-white">
+            Price: <span class="text-lg dark:text-gray-300">{{ product.price | currency : 'GBP' }}</span>
+          </p>
+
+          <p class="text-2xl font-semibold text-black dark:text-white">
+            Category: <span class="text-lg dark:text-gray-300">{{ product.category }}</span>
+          </p>
+
+          <p class="text-2xl font-semibold text-black dark:text-white">
+            Rating:
+            <span class="text-lg dark:text-gray-300">{{ product.rating.rate }}</span>
+            <i class="ms-2 pi pi-star-fill text-yellow-500"></i>
+          </p>
+
+          <button
+            class="bg-black text-white hover:bg-transparent hover:text-black dark:bg-white dark:text-black dark:hover:bg-transparent dark:hover:text-white border border-black dark:border-white px-4 py-2 rounded mt-4 transition duration-300 w-full cursor-pointer">
+            Add to Cart
+          </button>
+
         </div>
       </div>
-
 
     </div>
-
   </div>
 </section>

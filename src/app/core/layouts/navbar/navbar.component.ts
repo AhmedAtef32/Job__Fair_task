@@ -16,11 +16,34 @@ export class NavbarComponent implements OnInit {
 
   private readonly _cartService = inject(CartService)
   private readonly _pLATFORM_ID = inject(PLATFORM_ID)
-
+  isLightMode: boolean = true
   ngOnInit(): void {
     if(isPlatformBrowser(this._pLATFORM_ID)) {
       this._cartService.getCartProducts()
+      this.checkIfDrak()
+
     }
   }
+
+  changeMode() {
+
+    if(this.isLightMode){
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme','dark')
+      this.isLightMode = false
+    }else{
+      this.isLightMode = true
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme','light')
+    }
+  }
+
+  checkIfDrak(){
+       if (localStorage.getItem('theme') == 'dark') {
+        this.isLightMode = false
+        document.documentElement.classList.add('dark')
+      }
+  }
+
 
 }
