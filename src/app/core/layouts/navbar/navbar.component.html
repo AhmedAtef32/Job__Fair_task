@@ -21,9 +21,9 @@
           <i class="pi pi-shopping-cart" style="font-size: 20px;"></i>
         </li>
 
-        <li  class="show__side__bar bg-[#E7EDF4] size-8 rounded-md flex items-center justify-center  md:hidden">
+        <li class="show__side__bar bg-[#E7EDF4] size-8 rounded-md flex items-center justify-center  md:hidden">
           <button class="cursor-pointer" (click)="visible2 = true">
-            
+
             <i class="pi pi-bars" style="font-size: 20px;"></i>
           </button>
         </li>
@@ -37,9 +37,9 @@
 
 <!-- side bar -->
 <p-drawer header="Shop All" [(visible)]="visible2" position="right">
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-    aliquip ex ea commodo consequat.
-  </p>
+  <ul class="mt-5">
+    <li>
+      <a routerLink="/home" routerLinkActive="font-bold" class="text-black ">Home</a>
+    </li>
+  </ul>
 </p-drawer>

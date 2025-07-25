@@ -12,7 +12,7 @@ export class ProductsService {
 
   products$ : Observable<Iproducts> | undefined;
 
-  
+
   /**
    * Fetches the products data from the API, and caches the result.
    * The data is fetched only once and subsequent calls return the cached result.
@@ -21,10 +21,10 @@ export class ProductsService {
   getProducts():Observable<any> {
 
     if(!this.products$){
-      this.products$ = this._http.get<Iproducts>('https://fakestoreapi.com/products').pipe(shareReplay(1));
+      this.products$ = this._http.get<Iproducts>('https://fakestoreapi.com/products');
     }
 
     return this.products$;
   }
-  
+
 }
