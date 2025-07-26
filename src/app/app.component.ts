@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './core/layouts/navbar/navbar.component';
 import * as AOS from 'aos';
 import { isPlatformBrowser } from '@angular/common';
+import { FooterComponent } from "./core/layouts/footer/footer.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
