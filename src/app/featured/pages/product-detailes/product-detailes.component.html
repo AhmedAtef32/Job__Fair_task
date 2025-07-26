@@ -1,5 +1,5 @@
 @if (product) {
-  <section class="py-5">
+<section class="py-5">
   <div class="container mx-auto px-4">
     <h1 class="text-4xl font-bold text-center mt-5 text-black dark:text-white">
       Product Details
@@ -16,27 +16,34 @@
       <div class="flex flex-col justify-center items-start mt-4 md:mt-0">
         <div class="product__details space-y-3">
 
-          <h2 class="text-2xl font-semibold text-black dark:text-white">
-            Title: <span class="text-lg dark:text-gray-300">{{ product.title }}</span>
+          <h2 class=" font-semibold text-black text-2xl  dark:text-white">
+            {{ product.title }}
           </h2>
 
-          <p class="text-2xl font-semibold text-black dark:text-white">
-            Description: <span class="text-lg dark:text-gray-300">{{ product.description }}.</span>
+          <p class=" font-semibold text-black dark:text-white">
+            {{ product.description }}.
           </p>
 
-          <p class="text-2xl font-semibold text-black dark:text-white">
-            Price: <span class="text-lg dark:text-gray-300">{{ product.price | currency : 'GBP' }}</span>
+
+           <p class=" font-semibold text-black dark:text-white">
+            {{ product.category }}
           </p>
 
-          <p class="text-2xl font-semibold text-black dark:text-white">
-            Category: <span class="text-lg dark:text-gray-300">{{ product.category }}</span>
-          </p>
 
-          <p class="text-2xl font-semibold text-black dark:text-white">
-            Rating:
-            <span class="text-lg dark:text-gray-300">{{ product.rating.rate }}</span>
-            <i class="ms-2 pi pi-star-fill text-yellow-500"></i>
-          </p>
+          <div class="flex justify-between items-center w-full">
+            <p class=" font-semibold text-black dark:text-white">
+              {{ product.price | currency : 'GBP' }}
+            </p>
+
+            <p class=" font-semibold text-black dark:text-white">
+
+              {{ product.rating.rate }}
+              <i class="ms-2 pi pi-star-fill text-yellow-500"></i>
+            </p>
+          </div>
+
+
+
 
           <button
             class="bg-black text-white hover:bg-transparent hover:text-black dark:bg-white dark:text-black dark:hover:bg-transparent dark:hover:text-white border border-black dark:border-white px-4 py-2 rounded mt-4 transition duration-300 w-full cursor-pointer">
@@ -50,11 +57,5 @@
   </div>
 </section>
 }@else {
-  <app-product-detailes-skeleton></app-product-detailes-skeleton>
+<app-product-detailes-skeleton></app-product-detailes-skeleton>
 }
-
-
-
-
-
-
