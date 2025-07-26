@@ -10,7 +10,7 @@
 
 ## 🛠️ الأدوات المستخدمة
 
-- Angular (بدون تقسيم modules – كل حاجة في `AppModule`)
+- Angular 
 - Tailwind CSS لتنسيق الواجهات
 - PrimeNG لبعض الـ UI Components
 - Fake Store API لجلب المنتجات
